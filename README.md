@@ -108,9 +108,7 @@ def filter_file(path):
 你可以在此处将你的cookie填入， 但是你无需理会 User-Agent
 '''
 headers = {'User-Agent': '', 'cookie': ''}
-'''
-请注意get_random_agency_ip()中的 ip池'proxynew.txt'，将其改成你的文件名
-'''
+
 def save_image(image_name, filepath):
     '''
     根据image_name 图片名称，下载并保存微博高清配图
