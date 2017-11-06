@@ -27,6 +27,7 @@ import os
 import requests
 import time
 
+from . import get_agency_ip
 '''
 你可以在此处将你的cookie填入， 但是你无需理会 User-Agent
 '''
@@ -145,11 +146,11 @@ def get_photo():
 
 def get_random_agency_ip():
     '''
-    从ntproxynew.txt（姑且称其IP池）中随机取一个IP地址返回
+    从get_agency_ip.TYPE+'proxynew.txt'（姑且称其IP池）中随机取一个IP地址返回
     :return:   IP+port   string类型
     '''
     # 请注意此处的 ip池'proxynew.txt'，将其改成你的文件名
-    with open('ntproxynew.txt', 'r') as f:
+    with open(get_agency_ip.TYPE+'proxynew.txt', 'r') as f:
         ipLines = f.readlines()
     for i in range(len(ipLines)):
         ipLines[i] = ipLines[i].replace('\n', '')
