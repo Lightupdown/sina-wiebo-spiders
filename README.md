@@ -98,3 +98,44 @@ def filter_file(path):
     :return:  无
     '''
 ```
+
+# 下载微博用户的高清图片<br>
+* 代码： `get-weibo-photo.py`   <br>
+* 运行方式： 修改部分关键参数（你的cookie），直接运行<br>
+* 方法展示：<br>
+```python
+'''
+你可以在此处将你的cookie填入， 但是你无需理会 User-Agent
+'''
+headers = {'User-Agent': '', 'cookie': ''}
+'''
+请注意get_random_agency_ip()中的 ip池'proxynew.txt'，将其改成你的文件名
+'''
+def save_image(image_name, filepath):
+    '''
+    根据image_name 图片名称，下载并保存微博高清配图
+    :param image_name:  图片名称
+    :param filepath:   保存路径
+    :return: 无
+    '''
+
+def get_photo():
+    '''
+    获取 ../friends/ 目录下的各个uid文件来下载用户的微博配图
+    使用了代理IP和随机UA来避免被网站抓现行。
+    还有很多种不同的反反爬虫的方法，具体可参考GitHub中 luyishisi / Anti-Anti-Spider 项目
+    :return: 会在 ../photo/ 目录下生成各个用户的微博图片
+    '''
+
+def get_random_agency_ip():
+    '''
+    从proxynew.txt（姑且称其IP池）中随机取一个IP地址返回
+    :return:   IP+port   string类型
+    '''
+
+def get_random_user_agent():
+    '''
+    从user-agent-android.txt（UA池）中随机取得一个UA返回
+    :return: user-agent   string类型
+    '''
+```
