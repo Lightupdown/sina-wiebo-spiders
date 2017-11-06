@@ -51,7 +51,7 @@ def save_image(image_name, filepath):
     sina_image_url = 'http://ww1.sinaimg.cn/large/' + image_name
     # sina_image_url = image_name
     try:
-        response = requests.get(sina_image_url, stream=True)
+        response = requests.get(sina_image_url, stream=True, timeout=10)
     except Exception as e:
         print('Error: ', e)
         return
