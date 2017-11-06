@@ -15,7 +15,7 @@
 所以只能自己写了：<br>
 
 # 代理IP的获取及筛选：<br>
-* 代码： `get-agency-ip.py`   <br>
+* 代码： `get_agency_ip.py`   <br>
 (内有超级详细的注释（づ￣3￣）づ╭❤～)   <br>
 
 * 运行方式： 直接运行
@@ -54,7 +54,7 @@ def get_ip_status_requests(ip=0, port=0):
 ```
 
 # 微博以种子用户为延伸的获取关注列表：<br>
-* 代码： `get-weibo-friends.py`   <br>
+* 代码： `get_weibo_friends.py`   <br>
 * 运行方式： 修改部分关键参数（种子用户UID，你的cookie），直接运行<br>
 * 方法展示：<br>
 
@@ -100,7 +100,7 @@ def filter_file(path):
 ```
 
 # 下载微博用户的高清图片<br>
-* 代码： `get-weibo-photo.py`   <br>
+* 代码： `get_weibo_photo.py`   <br>
 * 运行方式： 修改部分关键参数（你的cookie），直接运行<br>
 * 方法展示：<br>
 ```python
@@ -129,13 +129,13 @@ def get_photo():
 
 def get_random_agency_ip():
     '''
-    从proxynew.txt（姑且称其IP池）中随机取一个IP地址返回
+    从ntproxynew.txt（姑且称其IP池）中随机取一个IP地址返回
     :return:   IP+port   string类型
     '''
 
 def get_random_user_agent():
     '''
-    从user-agent-android.txt（UA池）中随机取得一个UA返回
+    从user_agent_android.txt（UA池）中随机取得一个UA返回
     :return: user-agent   string类型
     '''
 ```

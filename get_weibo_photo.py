@@ -106,7 +106,7 @@ def get_photo():
                 url = 'https://weibo.cn/%s?page=%d' % (uid, page)
                 print('用户url: ', url)
                 try:
-                    # 搞一个代理IP： 代理IP池 可从 get-agency-ip.py 中生成
+                    # 搞一个代理IP： 代理IP池 可从 get_agency_ip.py 中生成
                     agencyip = get_random_agency_ip()  # 从IP池里随机取得代理IP
                     proxy_http = {'http': agencyip}
                     proxy_support = urllib.request.ProxyHandler(proxy_http)
@@ -163,7 +163,7 @@ def get_random_user_agent():
     从user-agent-android.txt（UA池）中随机取得一个UA返回
     :return: user-agent   string类型
     '''
-    with open('user-agent-android.txt', 'r') as f:
+    with open('user_agent_android.txt', 'r') as f:
         agentLines = f.readlines()
     for i in range(len(agentLines)):
         agentLines[i] = agentLines[i].replace('\n', '')
