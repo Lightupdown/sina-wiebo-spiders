@@ -49,7 +49,7 @@ def get_agency_ip(page=1):
     :param page: 从第几页开始爬，无需理会
     :return: 无  会在代码根目录生成一个 proxyold.txt 的文本文件，不想放那你就自己换位置吧
     '''
-    with open('proxyold.txt', "w+") as f:
+    with open(TYPE + 'proxyold.txt', "w+") as f:
         while page <= PAGE:
             page += 1
             time.sleep(3)
@@ -66,7 +66,7 @@ def get_agency_ip(page=1):
             for x in range(1, len(ips)):
                 ip = ips[x]
                 tds = ip.findAll("td")
-                ip_temp = tds[1].contents[0] + "\t" + tds[2].contents[0] + '\t' + tds[5].contents[0] + "\n"
+                ip_temp = tds[1].contents[0] + "\t\t" + tds[2].contents[0] + '\t\t' + tds[5].contents[0] + "\n"
                 print(tds[1].contents[0]+"\t"+tds[2].contents[0])
                 f.write(ip_temp)
 
@@ -75,10 +75,10 @@ def get_ip_status_http(ip=0, port=0):
     通过urllib.request的方式确定某个IP和端口是否能用，能用的保留到 proxynew.txt 文件中
     :param ip:  本来是为了某些个功能留存的，现在没啥用，可删可留
     :param port: 同上
-    :return: 无  生成一个proxynew.txt 的文本文件，其中的所有IP和端口都经过了此方式的验证
+    :return: 无  生成一个 TYPE+'proxynew.txt' 的文本文件，其中的所有IP和端口都经过了此方式的验证
     '''
-    with open('proxynew.txt', 'w+') as f_w:
-        with open('proxyold.txt', 'r') as f:
+    with open(TYPE+'proxynew.txt', 'w+') as f_w:
+        with open(TYPE+'proxyold.txt', 'r') as f:
             lines = f.readlines()
             print('lines: ', lines)
             proxys = []
@@ -112,10 +112,10 @@ def get_ip_status_telnet(ip=0, port=0):
     通过telnet的方式确定某个IP和端口是否能用，能用的保留到 proxynew.txt 文件中
     :param ip:  本来是为了某些个功能留存的，现在没啥用，可删可留
     :param port: 同上
-    :return: 无  生成一个proxynew.txt 的文本文件，其中的所有IP和端口都经过了此方式的验证
+    :return: 无  生成一个 TYPE+'proxynew.txt' 的文本文件，其中的所有IP和端口都经过了此方式的验证
     '''
-    with open('proxynew.txt', 'w+') as f_w:
-        with open('proxyold.txt', 'r') as f:
+    with open(TYPE+'proxynew.txt', 'w+') as f_w:
+        with open(TYPE+'proxyold.txt', 'r') as f:
             lines = f.readlines()
             print('lines: ', lines)
             # proxys = []
@@ -140,10 +140,10 @@ def get_ip_status_requests(ip=0, port=0):
     :param port: 同上
     :return: 无  生成一个proxynew.txt 的文本文件，其中的所有IP和端口都经过了此方式的验证
     '''
-    with open('proxyold.txt', 'r+') as f:
+    with open(TYPE+'proxyold.txt', 'r+') as f:
         lines = f.readlines()
     print('lines: ', lines)
-    with open('proxynew.txt', 'w+') as f_w:
+    with open(TYPE+'proxynew.txt', 'w+') as f_w:
         # proxys = []
         for i in range(0, len(lines)):
             ip = lines[i].strip("\n").split("\t")
