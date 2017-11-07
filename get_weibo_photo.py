@@ -27,7 +27,7 @@ import os
 import requests
 import time
 
-from . import get_agency_ip
+import get_agency_ip
 '''
 你可以在此处将你的cookie填入， 但是你无需理会 User-Agent
 '''
@@ -161,7 +161,7 @@ def get_random_agency_ip():
 
 def get_random_user_agent():
     '''
-    从user-agent-android.txt（UA池）中随机取得一个UA返回
+    从user_agent_android.txt（UA池）中随机取得一个UA返回
     :return: user-agent   string类型
     '''
     with open('user_agent_android.txt', 'r') as f:
